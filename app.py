@@ -3,7 +3,6 @@ import re
 from flask import Flask, render_template, request
 import pandas as pd
 import faiss
-from huggingface_hub import snapshot_download
 from sentence_transformers import SentenceTransformer
 from dotenv import load_dotenv
 from groq import Groq
@@ -31,12 +30,7 @@ app = Flask(__name__)
 # ----------------------------
 @lru_cache(maxsize=1)
 def load_model():
-    local_dir = snapshot_download(
-        repo_id="Prince-2025/MedInstruct-Model",  # your huggingface repo
-        allow_patterns=["*.json", "*.safetensors", "*.bin", "*.txt"],
-        local_dir="/root/.cache/huggingface/BGE-Medico-Model"
-    )
-    return SentenceTransformer(local_dir)
+    return SentenceTransformer('model/BGE-Medico-Model')
 
 @lru_cache(maxsize=1)
 def load_index():
