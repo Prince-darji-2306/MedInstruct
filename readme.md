@@ -1,0 +1,1 @@
+MedInstruct is a project focused on providing AI-powered, user-friendly instructions for medical devices.

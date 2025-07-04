@@ -1,0 +1,103 @@
+body {
+    font-family: cursive;
+}
+.sidebar-sticky
+{
+    padding-top: 30px;
+}
+
+h1 {
+    text-align: center; 
+    color: #112349; 
+    margin-top: 30px;
+}
+
+.input-group {
+    max-width: 700px;
+    margin: auto;
+    margin-top: 30px;
+}
+
+#queryInput {
+    padding: 0px 40px 0px 15px;
+    height: 42px;
+    border-radius: 8px;
+    background-color: #f4f4f4;
+}
+#queryInput::placeholder {
+  color: #888888;   /* or any hex code or color name you like */
+  opacity: 1;       /* if you want it fully opaque */
+}
+
+#queryInput:focus {
+  border: 1px solid rgb(231, 61, 9) !important;
+  box-shadow: none;
+  outline: none;
+}
+
+#micButton {
+    border-radius: 0;
+    border: none;
+    background: transparent;
+    right: 42px;
+    padding-right: 5px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+#searchButton {
+    border-radius: 6px;
+    left: -13px;
+    padding: 0px 40px;
+    background: transparent;
+    color: black;
+    border: 1px solid;
+    transition: 0.5s;
+}
+
+.mt-4
+{
+    padding: 0px 10px;
+}
+
+#searchButton:hover
+{
+    border: 1px solid rgb(231, 61, 9) !important;
+    color: rgb(231, 61, 9) !important;
+}
+.modal-content {
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, div, span, button, input, label, li, a {
+    font-family: "Comic Sans MS", "Brush Script MT", cursive !important;
+}
+h5, h1
+{
+    font-weight: 800 !important;
+}
+
+.custom-nav li a {
+    text-decoration: none;
+    background-color: white !important;
+    padding: 7px 0px;
+  display: block;
+  color: black;
+  border: 1px solid rgb(185, 185, 185);
+  margin: 5px 0;
+  text-align: center;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+.custom-nav li a:hover {
+  color: rgb(231, 61, 9);
+  border-color: rgb(231, 61, 9);
+}
+
+.sidebar {
+    background-color: #f4f4f4 !important;
+    min-height: 100vh;
+}
+

@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: MedInstruct
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:application --bind 0.0.0.0:$PORT"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.4
+    disk:
+      name: model-cache
+      mountPath: /root/.cache
+      sizeGB: 2

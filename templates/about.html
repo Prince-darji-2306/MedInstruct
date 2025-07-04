@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1><img src="{{ url_for('static', filename='img/about.png') }}" alt="about png" style="height: 40px; width: 30px;">About MedInstruct</h1>
+<p>
+MedInstruct is a project focused on providing AI-powered, user-friendly instructions for medical devices.
+</p>
+<ul>
+  <li><strong>BGE-Medico-Model</strong> for high-quality semantic search</li>
+  <li><strong>FAISS</strong> for fast vector retrieval</li>
+  <li><strong>Groq + Llama 3.1 8B Instant</strong> for natural language generation</li>
+</ul>
+<p>
+We collected a dataset of over 13,400 medical devices including names, definitions, and usage instructions.
+</p>
+<p>
+This tool is designed for nursing students, medical professionals, and educational purposes.
+</p>
+{% endblock %}

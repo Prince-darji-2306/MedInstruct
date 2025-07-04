@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>🩺Medical Instructor</h1>
+
+<form method="post" id="queryForm">
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" name="query" id="queryInput"
+           placeholder="eg. Device used to Measure Blood Pressure..."
+           value="{{ queryu|default('') }}">
+    <button class="btn" type="button" id="micButton"><img style="width: 19px;" src="{{ url_for('static', filename='img/mic.png') }}" alt=""></button>
+    <button class="btn btn-primary" type="submit" id="searchButton">Search</button>
+  </div>
+</form>
+<div class="modal fade" id="emptyInputModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center">
+      <div class="modal-body">
+        <h4>😅Nothing to search</h4>
+        <p>Please enter or speak something you want to know.</p>
+        <button type="button" class="btn btn-primary mt-2" data-bs-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mt-4">
+{% if result_markdown %}
+  {% if speak_instructions %}
+    <button class="btn btn-outline-secondary mt-2" style="margin-bottom: 20px;" id="replaySpeech">🔊 Play</button>
+    <div style="display:none" id="speakInstructions">{{ speak_instructions }}</div>
+  {% endif %}
+  <div class="mt-8">
+    {{ result_markdown | safe }}
+  </div>
+{% endif %}
+</div>
+
+<!-- Listening Modal -->
+<div class="modal fade" id="listeningModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center">
+      <div class="modal-body">
+        <h4>🎙 Listening...</h4>
+        <p>Please speak your device query now...</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/device.js') }}"></script>
+{% endblock %}
