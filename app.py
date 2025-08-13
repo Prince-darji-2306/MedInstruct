@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, request
 from llm_engine import get_response
 from utils.search_device import search_device
@@ -32,4 +33,5 @@ application = app
 
 # Local debug server (not used by Gunicorn)
 if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8080))
     app.run(host="0.0.0.0", port=8080)
