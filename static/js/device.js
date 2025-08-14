@@ -47,10 +47,23 @@ document.getElementById("searchButton").addEventListener("click", function(e) {
     }
 });
 
-document.getElementById('sidebarToggle').addEventListener('click', function() {
+function toggleSidebar() {
     const sidebar = document.querySelector('.sidebar');
-    sidebar.classList.toggle('visible');
-});
+    const toggleBtn = document.getElementById('sidebarToggle');
+
+    if (sidebar.classList.contains('visible')) {
+        sidebar.classList.remove('visible');
+        toggleBtn.style.transform = 'rotate(0deg)';
+        toggleBtn.textContent = '>';
+        
+    } else {
+        sidebar.classList.add('visible');
+        toggleBtn.style.transform = 'rotate(180deg)';
+    }
+}
+
+
+document.getElementById('sidebarToggle').addEventListener('click', toggleSidebar);
 
 document.getElementById('micButton').addEventListener('click', startListening);
 
@@ -79,5 +92,25 @@ window.addEventListener('load', function() {
         // auto speak after results come
         speakResponse();
         sessionStorage.removeItem("fromVoice");
+    }
+});
+
+// Close sidebar on window resize if screen becomes larger
+window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) {
+        const sidebar = document.querySelector('.sidebar');
+        if (sidebar.classList.contains('visible')) {
+            sidebar.classList.remove('visible');
+        }
+    }
+});
+
+// Handle escape key to close sidebar
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && window.innerWidth <= 768) {
+        const sidebar = document.querySelector('.sidebar');
+        if (sidebar.classList.contains('visible')) {
+            toggleSidebar();
+        }
     }
 });

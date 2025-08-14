@@ -4,7 +4,6 @@ from groq import Groq
 from markupsafe import Markup
 from utils.messages import get_messages
 
-
 API = os.getenv("GROQ")
 client = Groq(api_key=API)
 
