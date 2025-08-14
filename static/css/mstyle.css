@@ -74,6 +74,7 @@ h1 {
 #replaySpeech
 {
     transition: 0.4s;
+    background: transparent;
 }
 
 #replaySpeech:hover
@@ -151,7 +152,6 @@ h5, h1
     .sidebar.visible {
         transform: translateX(0);
         max-width: 235px;
-
     }
 
     #queryInput
