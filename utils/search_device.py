@@ -1,8 +1,9 @@
+import os
 import requests
 
 def search_device(query, top_k=3):
     try:
-        url = "https://prince-2025-all-models.hf.space/MedInsSch"
+        url = os.getenv('API_AUTH')
         headers = {"Content-Type": "application/json"}
 
 
