@@ -49,7 +49,7 @@ Contributions are welcome! Fork the repo, create a branch, and submit a Pull Req
 
 ## 📬 Contact
 
-Reach out via [GitHub Issues](https://github.com/Prince-darji-2306/MedInstruct/issues) or email: [medinstruct.team@gmail.com](mailto:medinstruct.team@gmail.com).
+Reach out via [GitHub Issues](https://github.com/Prince-darji-2306/MedInstruct/issues) 
 
 ---
 
